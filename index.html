@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>army 202</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='image/202 edited.jpeg') }}">
+   
+    <link rel="stylesheet" href=" {{ url_for('static' , filename='css/bootstrap.rtl.min.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css') }}">
+
+<style>
+
+/* start header */
+/* scroll bar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+    border-radius: 10em;
+}
+::-webkit-scrollbar-thumb{
+    background-color: red;
+    border-radius: 10em;
+}
+
+
+
+/* progress bar */
+#progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: red;
+    z-index: 9999;
+}
+/* progress bar */
+
+header{
+    /* position: fixed; */
+    top: 0;
+    border-end-end-radius: 20px ;
+    border-end-start-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(77, 70, 70, 0.37);
+    border: 2px solid rgba(64, 53, 53, 0.18);
+
+}
+#head0{
+    display: flex;    
+}
+#div1{
+    margin-left: 108px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#div2{
+    margin-left: 17px;
+    padding-top: 14px;
+    padding-bottom: 8px;
+}
+#s1{
+    margin-top: -4px;
+}
+#div3{
+    margin-top: 8px;
+}
+#hm1{
+    height: 78px;
+    width: 102px;
+    border-radius: 50%;
+    /* margin-right: 20px; */
+}
+#a1{
+    margin-top: 100px;
+    text-decoration: none;
+    color: black;
+}
+
+/* end header */
+
+
+.page-loader{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+.page-loader .logo-area{
+   width: 150px;
+   margin-bottom: 35px;
+}
+.page-loader .logo-area img{
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+.page-loader .loader{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  animation: animloader 1s linear infinite alternate;
+  /*box-shadow: -38px -12px,-14px 0px,14px 0px,38px 0px;*/
+}
+@keyframes animloader{
+  0%{
+    box-shadow: -38px -12px,-14px 0px,14px 0px,38px 0px;
+  }
+  33%{
+    box-shadow: -38px 0px,-14px -12px,14px 0px,38px 0px;
+  }
+  66%{
+    box-shadow: -38px 0px,-14px 0px,14px -12px,38px 0px;
+  }
+  100%{
+    box-shadow: -38px 0px,-14px 0px,14px 0px,38px -12px;
+  }
+}
+
+/* Start Footer */
+
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+    }
+
+    .wrapper .icon {
+    position: relative;
+    background: #fff;
+    z-index: 0;
+    border-radius: 50%;
+    margin: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .icon::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 50%;
+    top: 100%;
+    }
+    .wrapper .icon:hover:after {
+    animation: bg-pos 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 both;
+    animation-timing-function: ease-in-out;
+    }
+
+    .wrapper .icon:hover {
+    color: #fff;
+    overflow: unset;
+    transition: color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: overflow-toggle 0.7s;
+    }
+
+    .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    }
+
+    .wrapper .icon:hover span,
+    .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+    }
+    .wrapper .facebook::after {
+    background-color: #cd2010;
+    }
+    .wrapper .Eitta::after {
+    background-color: #cd2010;
+    }
+    .wrapper .email::after {
+    background-color: #cd2010;
+    }
+
+    .wrapper .facebook:hover .tooltip,
+    .wrapper .facebook:hover .tooltip::before {
+    background: #cd2010;
+    color: #fff;
+    }
+
+    .wrapper .Eitta:hover .tooltip,
+    .wrapper .Eitta:hover .tooltip::before {
+    background: #cd2010;
+    color: #fff;
+    }
+
+    .wrapper .email:hover .tooltip,
+    .wrapper .email:hover .tooltip::before {
+    background: #cd2010;
+    color: #fff;
+    }
+
+    @keyframes bg-pos {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0;
+    }
+    }
+
+    @keyframes overflow-toggle {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: visible;
+    }
+    }
+
+    /* End footer */
+</style>
+
+
+
+</head>
+<body>
+    
+          
+        <!-- start header -->
+        <header class="bglight fixed-top"> 
+
+                <div id="head0" class="container">
+                    <div id="div1" class="row">
+                        <img id="hm1" src="{{ url_for('static' , filename='./202 edited.jpeg') }}" alt="Avatar">
+                        <h1 style=" font-family: Times New Roman, Times, serif;" class="col align-self-center">Army 202</h1>
+                    </div>
+                </div>
+
+        </header>
+        <!-- end header -->
+
+        <!-- start body -->
+         <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            
+            <div class="container col-sm-6">
+                <div class="col align-self-center">
+
+
+                    <div>
+                        <h2>سلام و عرض ادب به مراجعه کنندگان عزیز &#127804;</h2>
+                        <br>
+                        <h4>این یک سایت  مختص برای کلاس 202 است.</h4>
+                        <h4>که در این سایت دو بخش مربوط به دانش آموزان این کلاس است.</h4>
+                    </div>
+
+                    <center>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      
+                    <div class="col align-self-center" >
+                        <a style="text-decoration: none;" href="{{ url_for('static' , filename='Info/info.html') }}">
+                            <div id="a1" class="card" style="width: 18rem;">
+                                <img class="card-img-top" src=" {{ url_for('static' , filename='image/place holder.jpeg') }}" alt="Card image cap">
+                                <hr>
+                                <div class="card-body">
+                                <p class="card-text">اطلاعات درباره سربازان کلاس 202</p>
+                                </div>
+                            </div>
+                        </a>
+                        <br>
+                        <br>
+                        <a style="text-decoration: none;" href="#">
+                          <div id="a1" class="card" style="width: 18rem;">
+                              <img class="card-img-top" src="./img/place holder.jpeg" alt="Card image cap">
+                              <hr>
+                              <div class="card-body">
+                              <p class="card-text h5" style="margin-top: -20px;">برنامه های کلاس 202</p>
+                              </div>
+                          </div>
+                        </a>
+                      <br>
+                      <br>
+                        <div class="col align-self-center" >
+                          <a style="text-decoration: none;" href="{{ url_for('static' , filename='Contacts/contact.html') }}">
+                              <div id="a1" class="card" style="width: 18rem;">
+                                  <img class="card-img-top" src="{{ url_for('static' , filename='image/place holder.jpeg') }}" alt="Card image cap">
+                                  <hr>
+                                  <div class="card-body">
+                                  <p class="card-text">راه های ارتباطی army202.ir</p>
+                                  </div>
+                              </div>
+                          </a>
+
+                         <!-- <div class="card border-success mb-3" style="max-width: 18rem;"> 
+                            <div class="card-header bg-transparent border-success">Header</div>
+                            <div class="card-body text-dark">
+                            <img class="card-title" src="./img/place holder.jpeg" alt="">
+                              <p class="card-text"></p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Footer</div>
+                          </div>
+                     </div>  -->
+                    </center>
+
+ 
+
+
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+
+
+
+
+
+
+
+
+        
+
+    
+
+        <!-- progress bar -->
+        <div id="progress-bar"></div>
+        <!-- progress bar -->
+        <script>
+
+            function updateprogressBar() {
+                const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                const scrollPercentage = ( scrollTop / (scrollHeight - clientHeight) ) * 100;
+                document.getElementById('progress-bar').style.width = scrollPercentage + '%';
+            }
+    
+            window.addEventListener('scroll', updateprogressBar);
+    
+          </script>
+<!-- start loader-->
+<div class="page-loader">
+    <div class="page-loader-content">
+      <div class="logo-area">
+        <img style="border-radius: 100%;" src="./img/202 edited.jpeg" alt="">
+      </div>
+      <span class="loader"></span>
+    </div>
+  </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded" , function () {
+            setTimeout(function () {
+                const loading = document.querySelector(".page-loader")
+                loading.remove()
+                
+            }, 3000);
+        });
+    </script>
+    <!-- end loader -->
+
+
+     <!-- start footer -->
+     <footer class="smal bg-light fixed-end">
+      <div class="container py-3 py-sm-1">
+          <div>
+              <hr>
+              <h4 class="container col-sm-6">ادمین های سایت:</h4>
+
+
+              
+              <ul class="wrapper">
+
+
+
+              <div>
+                  <a style="text-decoration: none; color: black;" href="https://eitaa.com/mahan_Boxing_version">
+                      <li class="icon facebook">
+                          <span class="tooltip">اجاقی</span>
+                          <!-- <img style="border-radius: 100%; height: 80px; width: 80px;" src="./img/jaghi.jpg" alt=""> -->
+                           <img style="width: 25px; height: 25px;" src="./img/admin-icon.svg" alt="">
+                      </li>                            
+                  </a>
+                  <p class="text-center"></p> اجاقی </p>
+              </div>
+
+
+              <div>
+                  <a style="text-decoration: none;" href="https://eitaa.com/AbBa002">
+                      <li class="icon Eitta">
+                          <span class="tooltip">کربلایی</span>
+                          <!-- <img style="border-radius: 100%; height: 80px; width: 80px;" src="./img/karbalaii.jpg" alt=""> -->
+                          <img style="width: 25px; height: 25px;" src="./img/admin-icon.svg" alt="">
+                    
+                      </li>                        
+                  </a>
+                  <p class="text-center"></p> کربلایی </p>
+               
+              </div>
+<hr>
+
+              <div>
+                  <a style="text-decoration: none;" href="https://eitaa.com/H6524y">
+                      <li class="icon email">
+                          <span class="tooltip">دولتی</span>
+                          <!-- <img style="border-radius: 100%; height: 80px; width: 80px;" src="./img/dolati.jpg" alt=""> -->
+                          <img style="width: 25px; height: 25px;" src="./img/admin-icon.svg" alt="">
+                      </li>                        
+                  </a> 
+                  <p class="text-center"></p> دولتی </p>
+              </div>
+
+
+
+              </ul>
+          </div>
+
+   <!-- end footer -->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
